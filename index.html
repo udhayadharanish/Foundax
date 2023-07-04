@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundax</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <div class="nav">
+        <div class="navbar">
+            <div class="logo"><img src="Images/logo-name.png" alt="" height="25px"></div>
+            <ul class="links">
+                <li><a href="Web devleopment">Web Devleopment</a></li>
+                <li><a href="Marketing">Marketing</a></li>
+                <li><a href="UI/UX Design">UI/UX Design</a></li>
+                <li><a href="Branding">Branding</a></li>
+            </ul>
+            
+            <div>
+                <button class="toggle_btn" onclick="myfunc()"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+        <div class="dropdown_menu">
+            <li><a href="Web devleopment">Web Devleopment</a></li>
+            <li><a href="Marketing">Marketing</a></li>
+            <li><a href="UI/UX Design">UI/UX Design</a></li>
+            <li><a href="Branding">Branding</a></li>
+            <li><a href="#" class="action_btn">Contact</a></li>
+        </div>
+    </div>
+        
+    
+    <!-- <div id="slideshow" class="slideshow">
+        <img src="Images/poster1.jpeg" alt="">
+    </div> -->
+    <div class="banner">
+        <h1>
+            Transforming Possibilities , Digitally ! 
+            <br>&emsp;&emsp; Looking for building your brand ?
+        </h1>
+        
+        <button class="btn">
+            VIEW OUR SERVICES
+        </button>
+    </div>
+    <div class="tool">
+        <div class="tool-div">
+            <div>
+                <img src="Images/brainstorm.png" alt="">
+            </div>
+            <p>Innovate</p>
+        </div>
+        
+        <div class="tool-div">
+            <div>
+                <img src="Images/network.png" alt="">
+            </div>
+            <p>Connect</p>
+        </div>
+        <div class="tool-div">
+            <div>
+                <img src="Images/checked.png" alt="">
+            </div>
+            <p>Successs</p>
+        </div>
+        
+    </div>
+    <div class="quote">
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide"><img src="Images/poster1.jpeg" alt=""></div>
+              <div class="swiper-slide"><img src="Images/poster2.jpeg" alt=""></div>
+              <div class="swiper-slide"><img src="Images/poster3.jpeg" alt=""></div>
+              ...
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+          
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+          </div>
+
+          
+    </div>
+    <div class="about" id="about">
+        <h1>
+            ABOUT US
+        </h1>
+        <p>
+            Welcome to The <span class="b">Foundax Company!</span> We are a cutting-edge digital technology service agency and electronics company dedicated to transforming your online presence and propelling your brand to new heights. With our expertise in digital marketing, personal branding, electronics, IT services, and analytics, we offer a comprehensive suite of services tailored to meet the diverse needs of our clients. At The Foundax company, we understand the challenges faced by busy ventures, Founders, studentrepreneurs, and decision-makers in today's fast-paced digital landscape. That's why our team of experienced professionals is here to guide you every step of the way.  Join us in the digital revolution and unlock your brand's potential today!
+        </p>
+    </div>
+    
+    <!-- <div class="team" id="team">
+        <h1>TEAM </h1>
+        <div>
+            <img src="Images/shyam.jpeg" alt="">
+            <h3>
+                Founder
+            </h3>
+            <p>
+                some quotes some quotes some quotes some quotes some quotes 
+            </p>
+        </div>
+        <div>
+            <img src="Images/varun.jpeg" alt="">
+            <h3>
+                Social Media Manager
+            </h3>
+            <p>
+                some quotes some quotes some quotes some quotes some quotes 
+            </p>
+        </div>
+        <div>
+            <img src="Images/shyam.jpeg" alt="">
+            <h3>
+                Founder
+            </h3>
+            <p>
+                some quotes some quotes some quotes some quotes some quotes 
+            </p>
+        </div>
+    </div> -->
+    <h1 class="head">SERVICES</h1>
+    <br>
+    <div class="services" id="services">
+        
+        <div class="ser-col">
+            <div class="dm">
+                <p>Digital Marketing</p>
+            </div>
+            <div class="an">
+                <p>Analytics</p>
+            </div>
+            <div class="pb">
+                <p>Personal Branding</p>
+            </div>
+        </div>
+        <img src="Images/logo.png" alt="" class="img">
+        <div class="ser-col">
+            <div class="it">
+                <p>IT Services</p>
+            </div>
+            <div class="el">
+                <p>Electronics</p>
+            </div>
+            <div class="cw">
+                <p>Content Writing</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+  
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+            delay: 3000,
+            },
+        
+        });
+    </script>
+</body>
+</html>
