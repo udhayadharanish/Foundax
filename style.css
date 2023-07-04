@@ -29,7 +29,7 @@
 
 body{
 
-    background-color: #ffd000;
+    background-color: #fbf10a;
 
 }
 .logo{
@@ -82,7 +82,7 @@ nav{
     height: 60px;
     padding: 10px;
     display: flex;
-    background-color: #ffd000;
+    background-color: #fbf10a;
     flex-grow: 1;
      /* background-color: #0c0c0c; */
     /* margin-top: 8px; */
