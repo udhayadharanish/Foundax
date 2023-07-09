@@ -1,6 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans&family=Raleway:wght@400;500;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans&family=League+Spartan:wght@500;700&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap');
+
 *{
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
 }
 
@@ -25,11 +27,244 @@
     
 }
 
+/* NAVBAR  */
+/* CSS Document */
 
+
+
+
+
+
+.toggle,
+[id^=drop] {
+	display: none;
+}
+
+/* Giving a background-color to the nav container. */
+nav { 
+	margin:0;
+	padding: 0;
+	background-color:#f9f300;
+    display: flex;
+}
+
+#logo {
+	display: block;
+	padding: 0 30px;
+	float: left;
+	line-height: 60px;
+}
+
+/* Since we'll have the "ul li" "float:left"
+ * we need to add a clear after the container. */
+
+nav:after {
+	content:"";
+	display:table;
+	clear:both;
+}
+
+/* Removing padding, margin and "list-style" from the "ul",
+ * and adding "position:reltive" */
+nav ul {
+	float: right;
+	padding:0;
+	margin:0;
+	list-style: none;
+	position: relative;
+	}
+	
+/* Positioning the navigation items inline */
+nav ul li {
+	margin: 0px;
+	display:inline-block;
+	float: left;
+	background-color:#f9f300;
+	}
+
+/* Styling the links */
+nav a {
+	display:block;
+	padding:14px 20px;	
+	color:black;
+	font-size:17px;
+	text-decoration:none;
+}
+
+
+nav ul li ul li:hover { background: rgba(255, 255, 255, 0.6); }
+
+/* Background color change on Hover */
+nav a:hover { 
+	background-color:rgba(255, 255, 255, 0.6); 
+}
+
+/* Hide Dropdowns by Default
+ * and giving it a position of absolute */
+nav ul ul {
+	display: none;
+	position: absolute; 
+	/* has to be the same number as the "line-height" of "nav a" */
+	top: 60px; 
+}
+	
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+	display:none;
+}
+
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+	width:170px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+
+/* Second, Third and more Tiers	
+ * We move the 2nd and 3rd etc tier dropdowns to the left
+ * by the amount of the width of the first tier.
+*/
+nav ul ul ul li {
+	position: relative;
+	top:-60px;
+	/* has to be the same number as the "width" of "nav ul ul li" */ 
+	left:170px; 
+}
+
+	
+/* Change ' +' in order to change the Dropdown symbol */
+
+
+
+/* Media Queries
+--------------------------------------------- */
+
+@media all and (max-width : 988px) {
+
+    nav ul li:hover > ul {
+        display:inherit;
+    }
+	#logo {
+		display: block;
+		padding: 0;
+		width: 100%;
+		text-align: left;
+		float: none;
+	}
+
+	nav {
+		margin: 0;
+	}
+    
+
+	/* Hide the navigation menu by default */
+	/* Also hide the  */
+	.toggle + a,
+	.menu {
+		display: none;
+        width: 100vw;
+        position: absolute;
+        left: 0;
+        z-index: 9999;
+	}
+
+
+	/* Stylinf the toggle lable */
+	.toggle {
+		display: block;
+		background-color:#f9f300;
+		padding:14px 20px;	
+		color:black;
+		font-size:17px;
+		text-decoration:none;
+		border:none;
+	}
+
+	.toggle:hover {
+		background-color: rgba(255, 255, 255, 0.6);
+	}
+
+	/* Display Dropdown when clicked on Parent Lable */
+	[id^=drop]:checked + ul {
+		display: block;
+	}
+
+	/* Change menu item's width to 100% */
+	nav ul li {
+		display: block;
+		width: 100%;
+		}
+
+	nav ul ul .toggle,
+	nav ul ul a {
+		padding: 0 40px;
+	}
+
+	nav ul ul ul a {
+		padding: 0 80px;
+	}
+
+	nav a:hover,
+ 	nav ul ul ul a {
+		background-color: rgba(255, 255, 255, 0.6);
+	}
+  
+	nav ul li ul li .toggle,
+	nav ul ul a,
+  nav ul ul ul a{
+		padding:14px 20px;	
+		color:black;
+		font-size:17px; 
+	}
+  
+  
+	nav ul li ul li .toggle,
+	nav ul ul a {
+		background-color:#f9f300; 
+	}
+
+	/* Hide Dropdowns by Default */
+	nav ul ul {
+		float: none;
+		position:static;
+		color: #ffffff;
+		/* has to be the same number as the "line-height" of "nav a" */
+	}
+		
+	/* Hide menus on hover */
+	nav ul ul li:hover > ul,
+	nav ul li:hover > ul {
+		display: none;
+	}
+		
+	/* Fisrt Tier Dropdown */
+	nav ul ul li {
+		display: block;
+		width: 100%;
+	}
+
+	nav ul ul ul li {
+		position: static;
+		/* has to be the same number as the "width" of "nav ul ul li" */ 
+
+	}
+
+}
+
+@media all and (max-width : 330px) {
+
+	nav ul li {
+		display:block;
+		width: 94%;
+	}
+
+}
+/* Navbar ends */
 
 body{
 
-    background-color: #fbf10a;
+    background-color: #f9f300;
 
 }
 .logo{
@@ -41,135 +276,74 @@ body{
     padding: 5px;
 }
 
-li{
-    list-style: none;
-}
-a{
+*{
+    border: none;
     text-decoration: none;
-    color: black;
-    font-size: 1.1rem;
-    padding: 8px;
-    transition-duration: 0.2s;
-    border-radius: 10px;
-    font-weight: bold;
-    padding: 10px;
-    text-align: center;
-    justify-content: center;
-    
-    
-}
-li a:hover{
-    color: white;
-    
-    background-color: rgba(0, 0, 0, 0.1);
-   
-}
-
-
-/* Header */
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 20px 20px 20px 0;
-    background-color: red;
-    width: 100%;
-    
-}
-.navbar{
-    width: 98%;
-    flex-direction: row;
-    height: 60px;
-    padding: 10px;
-    display: flex;
-    background-color: #fbf10a;
-    flex-grow: 1;
-     /* background-color: #0c0c0c; */
-    /* margin-top: 8px; */
-    align-items: center;
-    justify-content: space-evenly;
-    
-    
-}
-.navbar .links{
-    
-    display: flex;
-    gap: 1.5rem;
-    
-    flex-grow: 1;
-    text-align: center;
-    justify-content: flex-end;
-    
+    box-sizing: border-box;
 
 
 }
+body{
+    min-height: 100vh;
 
-
-
-
-
-.navbar .toggle_btn{
-    font-size: 1.5rem;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    display: none;
 }
 
-.action_btn{
-    background-color: #fff;
-    color: #0c0c0c;
-    border-radius: 8px;
-    outline: none;
-    border: none;
-    font-weight: bold;
-    font-size: 0.7rem;
-    cursor: pointer;
-    transition-duration: 0.5s;
-    
+.service-nav h3{
+    font-size: 23px;
+    align-self: center;
 }
-
-.action_btn:hover{
-    transform: scale(1.1);
+.service-nav hr{
+    border: 1px solid rgba(0,0, 0, 0.3);
+    width: 90%;
 }
-/* dropdown */
-.dropdown_menu{
-    display: none;
+.service-nav ul{
+    margin: 0;
+    padding: 0;
+}
+.service-nav{
     position: absolute;
-    right: 2rem;
-    height: 0;
-    top: 90px;
-    width: 0;
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(15px);
+    top:8%;
+    right: 5%;
+    margin: 0 20px ;
+    display: none;
+    flex-direction: row;
+    padding:8px;
+    width: 60%;
     border-radius: 10px;
-    overflow: hidden;
-    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
-}
-.dropdown_menu.open{
-    height: 330px;
-    z-index: 1;
-}
+    background-color: rgb(255, 255, 255);
+    justify-content: space-around;
 
-.dropdown_menu li{
-    padding: 0.7rem;
+}
+.service-nav div{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
 }
-
-.dropdown_menu li:hover{
-    background: rgba(0, 0, 0, 0.3);
-}
-
-.dropdown_menu .action_btn{
-    width: 100%;
+.service-nav div ul{
+    list-style: none;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 }
-.dropdown_menu .action_btn:hover{
-    transform: scale(0.95);
+.service-nav div ul li{
+    padding: 10px;
 }
+.service-nav div ul li a{
+    color: black;
+}
+.service-nav div ul li a:hover {
+    color: black;
+}
+
+
+@media (max-width:958px) {
+    body{
+        overflow-y: scroll;
+    }
+    
+}
+
 .slideshow{
     transition-duration: 1s;
 }
@@ -246,6 +420,16 @@ p{
     justify-content: center;
     align-items: center;
 }
+
+.swiper-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .swiper-slide {
+    flex-shrink: 0; /* Ensure slides don't shrink */
+  }
 .swiper{
     /* width: 80%; */
     
@@ -304,92 +488,89 @@ p{
 }
 .services{
     display: flex;
-    height: 70vh;
+    height: auto;
     justify-content: space-around;
     align-items: center;
-    color: white;
+    color: rgb(0, 0, 0);
+    
 }
 
 .services div{
     display: flex;
     flex-direction: column;
+
 }
-.services img{
-    height: 200px;
+.ser-des{
+    flex-wrap: wrap;
 }
-.ser-col div{
-    border-radius: 50%;
-    background-color: #fff;
-    height: 150px;
-    width: 150px;
-    margin: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition-duration: 0.3s;
-   
+.ser-content{
+    flex-wrap: nowrap;
 }
 
-.ser-col div:hover{
-    transform:scale(1.1);
+.ser-col .ser-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.4s;
+    border-radius: 8px;
+    margin: 25px 0;
 }
-.ser-col p{
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 5px;
-    border-radius: 5px;
-    text-align: center;
+
+
+.ser-des{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 300px;
+
 }
+.ser-des *{
+    display: flex;
+    flex-wrap: wrap;
+}
+.left-align{
+    align-items: flex-start;
+}
+.ser-des.left-align p{
+    text-align: left;
+}
+.ser-des h3{
+    text-align: right;
+    font-size: 24px;
+}
+
+.ser-des p{
+    max-width: 200px;
+    margin: 10px;
+    text-align: right;
+}
+.ser-content img{
+    width: 80px;
+    height: 80px;
+    margin: 20px;
+    border-radius: 50%;
+}
+
+.ser-content:hover{
+    box-shadow: 0 0 50px 0 rgba(0,0,0,.1);
+    background-color: #fff;
+}
+
 .head{
     flex-basis: 100%;
     text-align: center;
     margin-top: 30px;
 }
-.dm{
-    background: url("Images/digitalmarketing.png");
-    background-size: cover;
-    background-position: center;
+.banner h1{
+    text-align: center;
 }
-.an{
-    background: url("Images/analytics.jpg");
-    background-size: cover;
-    background-position: center;
-}
-.pb{
-    background: url("Images/branding.jpg");
-    background-size: cover;
-    background-position: center;
-}
-.it{
-    background: url("Images/IT.png");
-    background-size: cover;
-    background-position: center;
-}
-.el{
-    background: url("Images/electronics.jpg");
-    background-size: cover;
-    background-position: center;
-}
-.cw{
-    background: url("Images/contentwiting.jpg");
-    background-size: cover;
-    background-position: center;
-}
+
 /* RESPONSIVE */
 
 @media(max-width:965px){
-    .services{
-        height: 50vh;
-    }
-    .services img{
-        height: 50px;
-    }
-    .ser-col div{
-        height: 100px;
-        width: 100px;
-    }
-    .ser-col p{
-        font-size: 10px;
-    }
+    
     .navbar .links,
     .navbar .action_btn{
         display: none;
@@ -410,7 +591,22 @@ p{
     .banner h1{
         font-size: 18px;
         margin: 30px 0;
+        text-align: center;
     }
+    .services{
+        flex-direction: column;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+    }
+    .ser-des{
+        width: fit-content;
+    }
+    .services .img{
+        height: 150px;
+        margin: 25px 10px;
+    }
+    
     
 }
 @media(max-width:400px){
@@ -440,5 +636,77 @@ p{
         font-size: 1.5rem;
     }
 
+}
+
+.why
+{   display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+}
+@media (max-width:968px) {
+    .why{
+        flex-direction: column;
+    }
+    
+}
+.b{
+    font-weight: 600;
+    margin: 30px;
+}
+
+
+.why p{
+    text-align: justify;
+    max-width: 900px;
+
+}
+.why button{
+    padding: 10px 15px;
+    border-radius: 15px;
+    color: white;
+    background-color: black;
+    font-size: 15px;
+}
+
+.why-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.why-blocks div{
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    background-color: #fff;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+}
+.why-blocks div:hover{
+    background-color: rgba(0,0, 0, 0.5);
+    color: #fff;
+    transform: translateY(-10px);
+}
+
+.why-blocks div img{
+    height: 100px;
+    width: 100px;
+    margin: 25px 0px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0, 0, 0.5);
+    padding: 10px;
+
+}
+.why-blocks div h3{
+    margin: 0;
+}
+.why-blocks div p{
+    padding: 2px 20px;
+    text-align: center;
+    margin: 0;
 }
 
