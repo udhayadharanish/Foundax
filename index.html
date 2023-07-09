@@ -10,36 +10,165 @@
     <script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 </head>
+<script>
+    document.addEventListener("DOMContentLoaded",function(){
+        console.log(document.querySelector("#menu_bar").value);
+    })
+    document.addEventListener("change",function(){
+        var menu = document.querySelector("#drop:checked");
+        console.log(menu);
+        if(menu){
+            document.querySelector("#menu_label i").className = "fa-solid fa-xmark";
+        }
+        else{
+            document.querySelector("#menu_label i").className = "fa-solid fa-bars";
+        }
+    })
+    function toggleServiceNav(show) {
+        var width = window.innerWidth;
+        var serviceNav = document.querySelector(".service-nav");
+        if (show & width >= 988) {
+            console.log(width)
+            serviceNav.style.display = "flex";
+        } else {
+            console.log("else block")
+            serviceNav.style.display = "none";
+        }
+        }
+</script>
 <body>
-    <div class="nav">
-        <div class="navbar">
-            <div class="logo"><img src="Images/logo-name.png" alt="" height="25px"></div>
-            <ul class="links">
-                <li><a href="Web devleopment">Web Devleopment</a></li>
-                <li><a href="Marketing">Marketing</a></li>
-                <li><a href="UI/UX Design">UI/UX Design</a></li>
-                <li><a href="Branding">Branding</a></li>
+    <header >
+        <!-- <a href="#" class="logo"><img src="Images/logo-name.png" alt=""></a>
+        <input type="checkbox" id="menu_bar">
+        <label for="menu_bar" id="menu_label"><i class="fa-solid fa-bars"></i></label> -->
+        <nav class="nav">
+            <div id="logo" class="logo"><img src="Images/logo-name.png" alt=""></div>
+
+
+            <div>
+
+    
+                <label for="drop" class="toggle" id="menu_label"><i class="fa-solid fa-bars"></i></label>
+                <input type="checkbox" id="drop" />
+                    <ul class="menu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <!-- <li onmouseover="toggleServiceNav(true)" onmouseout="toggleServiceNav(false)">
+                            First Tier Drop Down
+                            <label for="drop-1" class="toggle" >WordPress +</label>
+                            <a href="#">WordPress</a>
+                            <input type="checkbox" id="drop-1"/>
+                            <ul>
+                                <li><a href="#">Themes and stuff</a></li>
+                                <li><a href="#">Plugins</a></li>
+                                <li><a href="#">Tutorials</a></li>
+                            </ul> 
+        
+                        </li> -->
+
+                        <li onmouseover="toggleServiceNav(true)" onmouseout="toggleServiceNav(false)">
+        
+                        <!-- First Tier Drop Down -->
+                        <label for="drop-2" class="toggle">What we offer ? <i class="fa-sharp fa-solid fa-caret-down"></i>  </label>
+                        <a href="#">What we offer ? <i class="fa-sharp fa-solid fa-caret-down"></i> </a>
+                        <input type="checkbox" id="drop-2"/>
+                        <ul>
+                            <li>
+                            
+                                <!-- Second Tier Drop Down -->        
+                                <label for="drop-3" class="toggle">Digital Marketing & Branding <i class="fa-sharp fa-solid fa-caret-down"></i></label>
+                                <a href="#">Digital Marketing & Branding  </a>         
+                                <input type="checkbox" id="drop-3"/>
+            
+                                <ul>
+                                    <li><a href="#">Soacial Media Management</a></li>
+                                    <li><a href="#">Facebook & Insta Ads</a></li>
+                                    <li><a href="#">Personal Branding</a></li>
+                                    <li><a href="#">Content Writing</a></li>
+                                    <li><a href="#">Ghost Writing</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li>
+                            
+                                <!-- Second Tier Drop Down -->        
+                                <label for="drop-4" class="toggle">Technology <i class="fa-sharp fa-solid fa-caret-down"></i></label>
+                                <a href="#">Technology</a>         
+                                <input type="checkbox" id="drop-4"/>
+            
+                                <ul>
+                                    <li><a href="#">Web Application</a></li>
+                                    <li><a href="#">App Application</a></li>
+                                    <li><a href="#">UI/UX Design</a></li>
+                                    <li><a href="#">Data Analytics</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                            
+                            <!-- Second Tier Drop Down -->        
+                            <label for="drop-5" class="toggle">Electronics <i class="fa-sharp fa-solid fa-caret-down"></i></label>
+                            <a href="#">Electronics</a>         
+                            <input type="checkbox" id="drop-5"/>
+        
+                            <ul>
+                                <li><a href="#">IOT</a></li>
+                                <li><a href="#">Power Electronics</a></li>
+                                <li><a href="#">Embedded System</a></li>
+                            </ul>
+                            </li>
+                        </ul>
+                        </li>
+                        
+                        <li><a href="#">Our Product</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+            </div>
+            </nav>
+    
+    </header>
+    <div class="service-nav" id="service-nav" onmouseover="toggleServiceNav(true)" onmouseout="toggleServiceNav(false)">
+        <div>
+            <h3>Digital Marketing</h3>
+            <hr>
+            <ul>
+                <li><a href="#">Soacial Media Management</a></li>
+                <li><a href="#">Facebook & Inota Ads</a></li>
+                <li><a href="#">Personal Branding</a></li>
+                <li><a href="#">Content Writing</a></li>
+                <li><a href="#">Ghost Writing</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Technology</h3>
+            <hr>
+            <ul>
+                <li><a href="#">Web Application</a></li>
+                <li><a href="#">App Application</a></li>
+                <li><a href="#">UI/UX Design</a></li>
+                <li><a href="#">Data Analytics</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Electronics</h3>
+            <hr>
+            
+            <ul>
+                <li><a href="#">IOT</a></li>
+                <li><a href="#">Power Electronics</a></li>
+                <li><a href="#">Embedded System</a></li>
             </ul>
             
-            <div>
-                <button class="toggle_btn" onclick="myfunc()"><i class="fa-solid fa-bars"></i></button>
-            </div>
         </div>
-        <div class="dropdown_menu">
-            <li><a href="Web devleopment">Web Devleopment</a></li>
-            <li><a href="Marketing">Marketing</a></li>
-            <li><a href="UI/UX Design">UI/UX Design</a></li>
-            <li><a href="Branding">Branding</a></li>
-            <li><a href="#" class="action_btn">Contact</a></li>
-        </div>
-    </div>
-        
+    </div> 
     
     <!-- <div id="slideshow" class="slideshow">
         <img src="Images/poster1.jpeg" alt="">
     </div> -->
     <div class="banner">
-        <h1 style="text-align:center;">
+        <h1 >
             Transforming Possibilities , Digitally ! 
             <br>Looking for building your brand ?
         </h1>
@@ -50,10 +179,12 @@
     </div>
     <div class="tool">
         <div class="tool-div">
+            
             <div>
                 <img src="Images/brainstorm.png" alt="">
             </div>
             <p>Innovate</p>
+           
         </div>
         
         <div class="tool-div">
@@ -70,7 +201,7 @@
         </div>
         
     </div>
-    <div class="quote">
+    <div class="quote swiper-container">
         <div class="swiper">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
@@ -137,26 +268,64 @@
     <div class="services" id="services">
         
         <div class="ser-col">
-            <div class="dm">
-                <p>Digital Marketing</p>
+
+            <div class="ser-content">
+                
+                <div class="ser-des">
+                    <h3>Digital Marketing</h3>
+                    <p>Well-equipped with Facebook, Instagram, YouTube, Google, SEO, and more.</p>
+                </div>
+                <img src="Images/digitalmarketing.png" alt="" >
             </div>
-            <div class="an">
-                <p>Analytics</p>
+
+            <div class="ser-content">
+                
+                <div class="ser-des">
+                    <h3>Analytics</h3>
+                    <p>Well-equipped with Facebook, Instagram, YouTube, Google, SEO, and more.</p>
+                </div>
+                <img src="Images/analytics.jpg" alt="" >
             </div>
-            <div class="pb">
-                <p>Personal Branding</p>
+
+            <div class="ser-content">
+                
+                <div class="ser-des">
+                    <h3>Personal Branding</h3>
+                    <p>Well-equipped with Facebook, Instagram, YouTube, Google, SEO, and more.</p>
+                </div>
+                <img src="Images/checked.png" alt="" >
             </div>
         </div>
-        <img src="Images/logo.png" alt="" class="img">
+
+        <img src="Images/logo.png" alt="" class="img" >
+
         <div class="ser-col">
-            <div class="it">
-                <p>IT Services</p>
+            <div class="ser-content">
+                <img src="Images/IT.png" alt="" >
+                <div class="ser-des  left-align">
+                    <h3>IT Services</h3>
+                    <p>Well-equipped with Facebook, Instagram, YouTube, Google, SEO, and more.</p>
+                </div>
+                
             </div>
-            <div class="el">
-                <p>Electronics</p>
+
+
+            <div class="ser-content">
+                <img src="Images/electronics.jpg" alt="" >
+                <div class="ser-des  left-align">
+                    <h3>Electronics</h3>
+                    <p>Well-equipped with Facebook, Instagram, YouTube, Google, SEO, and more.</p>
+                </div>
+                
             </div>
-            <div class="cw">
-                <p>Content Writing</p>
+
+            <div class="ser-content">
+                <img src="Images/contentwiting.jpg" alt="" >
+                <div class="ser-des left-align">
+                    <h3>Content Writing</h3>
+                    <p>Well-equipped with Facebook, Instagram, YouTube, Google, SEO, and more.</p>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -182,5 +351,29 @@
         
         });
     </script>
+
+    
+    <div class="why" id="why">
+        
+        <div class="why-blocks">
+
+            <div>
+                
+                <img src="Images/brainstorm.png" alt="">
+                <h3>Service</h3>
+                <p>We understand your brand and come up with customized solutions</p>
+            </div>
+            
+
+        </div>
+        <div class="why-content">
+            <h1>WHY US ?</h1>
+            <p>
+                Choose The Foundax company as your digital technology service agency and electronics company and experience the difference. With our expertise, cutting-edge solutions, and dedication to client satisfaction, we are the ideal partner for your digital needs. Our experienced team delivers customized strategies tailored to your unique goals, ensuring measurable results and a competitive edge. We value collaboration, actively involving you in the process to create solutions that truly reflect your vision. Count on us for exceptional service, prompt support, and a seamless experience throughout our partnership. Trust The Foundax to propel your brand forward and unlock your digital potential.
+            </p>
+            <button>Explore More</button>
+        </div>
+        
+    </div>
 </body>
 </html>
